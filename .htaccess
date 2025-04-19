@@ -1,0 +1,27 @@
+#.htaccess  
+RewriteEngine On
+
+# Stop processing if the request is for an existing file/directory in backend/uploads
+RewriteCond %{REQUEST_URI} ^/php-blog1-api/backend/uploads/ [NC]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Existing rules to route API requests to backend/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ backend/index.php/$1 [L]
+
+# Handle PUT requests properly
+RewriteCond %{REQUEST_METHOD} PUT
+RewriteRule ^(.*)$ backend/index.php [QSA,L]
+
+# Allow CORS
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type, Accept, Authorization, X-Requested-With"
+Header set Access-Control-Allow-Credentials "true"
+
+# Add these lines to your existing .htaccess
+php_value upload_max_filesize 5M
+php_value post_max_size 6M 
