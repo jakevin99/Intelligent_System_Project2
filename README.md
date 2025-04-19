@@ -42,4 +42,3 @@ The API includes an AI-powered feature that automatically generates summaries fo
 
 ## License
 
-MIT 
