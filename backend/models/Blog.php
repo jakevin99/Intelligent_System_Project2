@@ -1,5 +1,5 @@
 <?php
-// C:\xampp\htdocs\php-blog1-api\backend\models\Blog.php
+
 
 
 require_once __DIR__ . '/../config/database.php';

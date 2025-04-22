@@ -1,5 +1,5 @@
 <?php
-//C:\xampp\htdocs\php-blog1-api\backend\index.php
+
 // Enable error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
