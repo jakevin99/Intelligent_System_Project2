@@ -11,6 +11,9 @@ export interface AISummaryResponse {
 @Injectable({
   providedIn: 'root'
 })
+// We are bypassing the backend API and going directly to Ollama for now 
+// because we don't have time to configure the backend API to work with the AI summary.
+// This is a temporary solution.
 export class AISummaryService {
   
   // Use the same Ollama URL that works in the chatbot
