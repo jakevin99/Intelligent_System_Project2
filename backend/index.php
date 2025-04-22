@@ -138,6 +138,7 @@ function verifyToken() {
  * - Error handling and fallback mechanisms to ensure user experience
  * - Response cleaning to handle malformed responses from the AI service
  */
+// This function is used to sends the blog title and content to the Ollama API and returns the summary
 function callOllamaAPI($prompt, $model = 'deepseek-r1:1.5b') {
     // Try multiple URLs for Ollama
     $ollamaUrls = [

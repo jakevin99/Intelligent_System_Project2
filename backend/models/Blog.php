@@ -111,7 +111,7 @@ class Blog {
         }
     }
 
-    public function read($author_id = null) {
+    public function read() {
         try {
             $query = "SELECT b.*, u.username as author 
                     FROM " . $this->table . " b
@@ -457,6 +457,11 @@ class Blog {
      * @return array Response with the AI-generated summary
      * @throws Exception if blog not found or API error
      */
+
+    /*this method orchestrates this: retrieves blog content, formats the prompt,
+     calls the Ollama API function, and saves the returned summary
+     to the database associated with the blog post.    
+    */
     public function generateAiSummary($id, $customPrompt = null) {
         try {
             // Get the blog data first
