@@ -16,14 +16,14 @@ export interface AISummaryResponse {
 // This is a temporary solution.
 export class AISummaryService {
   
-  // Use the same Ollama URL that works in the chatbot
+  
   private ollamaUrl = 'http://localhost:11434';
   private modelName = 'deepseek-r1:1.5b';
 
   constructor(private http: HttpClient) {}
 
   summarizeBlog(blog: Blog): Observable<any> {
-    // Skip the backend API and go directly to Ollama like in your chatbot
+    // Skip the backend API and go directly to Ollama 
     console.log('Connecting directly to Ollama API...');
     return this.summarizeWithOllama(blog);
   }
