@@ -12,7 +12,6 @@ export interface AISummaryResponse {
   providedIn: 'root'
 })
 export class AISummaryService {
-  private apiUrl = 'http://localhost/php-blog1-api';
   
   // Use the same Ollama URL that works in the chatbot
   private ollamaUrl = 'http://localhost:11434';
